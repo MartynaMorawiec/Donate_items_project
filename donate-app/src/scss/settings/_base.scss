@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-base;
+}
+
+.container {
+  max-width: 1368px;
+  margin: 0 auto;
+}
