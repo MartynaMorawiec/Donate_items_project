@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Link as Scroll } from "react-scroll";
 // import headerimg from "../../assets/Home-Hero-Image.jpg";
 // import "./home-header.styles.scss";
+import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 
 const HomeHeader = () => {
   return (
@@ -23,19 +25,59 @@ const HomeHeader = () => {
           <nav className="nav">
             <ul className="nav__list">
               <li className="nav__element">
-                <Link to="">Start</Link>
+                <Scroll
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Start
+                </Scroll>
               </li>
               <li className="nav__element">
-                <Link to="">O co chodzi?</Link>
+                <Scroll
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  O co chodzi?
+                </Scroll>
               </li>
               <li className="nav__element">
-                <Link to="">O nas</Link>
+                <Scroll
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  O nas
+                </Scroll>
               </li>
               <li className="nav__element">
-                <Link to="">Fundacja i organizacje</Link>
+                <Scroll
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Fundacja i organizacje
+                </Scroll>
               </li>
               <li className="nav__element">
-                <Link to="">Kontakt</Link>
+                <Scroll
+                  to=""
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  Kontakt
+                </Scroll>
               </li>
             </ul>
           </nav>
@@ -44,6 +86,9 @@ const HomeHeader = () => {
               Zacznij pomagać! <br />
               Oddaj niechciane rzeczy w zaufane ręce
             </h2>
+            <div className="cta__decoration">
+              <Decoration />
+            </div>
             <div className="cta__buttons">
               <button className="cta__btn">
                 <Link to="/logowanie">

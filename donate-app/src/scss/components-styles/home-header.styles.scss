@@ -11,8 +11,8 @@
     overflow: hidden;
   }
   &__container {
+    position: fixex;
     width: 50%;
-    max-width: 684px;
     padding-top: 37px;
     display: flex;
     flex-direction: column;
@@ -58,11 +58,9 @@
     margin-top: 219px;
     letter-spacing: -0.76px;
     line-height: 55px;
-    &::after {
-      content: "~*~*~*~*~";
-      display: block;
-      margin-top: 25px;
-    }
+  }
+  &__decoration {
+    margin-top: 25px;
   }
   &__buttons {
     display: flex;
