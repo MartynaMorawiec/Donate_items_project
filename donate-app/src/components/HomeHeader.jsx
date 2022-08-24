@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Link as Scroll } from "react-scroll";
-// import headerimg from "../../assets/Home-Hero-Image.jpg";
-// import "./home-header.styles.scss";
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 
 const HomeHeader = () => {
