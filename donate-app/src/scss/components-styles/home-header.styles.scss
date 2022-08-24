@@ -1,0 +1,83 @@
+.header {
+  height: 100vh;
+  display: flex;
+  &__img {
+    background-image: url("../../assets/Home-Hero-Image.jpg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 52%;
+    height: 100%;
+    overflow: hidden;
+  }
+  &__container {
+    width: 50%;
+    max-width: 684px;
+    padding-top: 37px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 152px;
+  }
+  &__top {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  &__signin {
+    color: $lightgray-color;
+    float: right;
+    margin-left: 30px;
+    padding: 9px 10px;
+    &-active {
+      border: 0.75px solid $focus-color;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 55px;
+    margin-top: 26px;
+  }
+  &__element {
+    font-size: 1.8rem;
+    color: $darkgray-color;
+  }
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h2 {
+    font-size: 3.8rem;
+    margin-top: 219px;
+    letter-spacing: -0.76px;
+    line-height: 55px;
+    &::after {
+      content: "~*~*~*~*~";
+      display: block;
+      margin-top: 25px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    font-size: 3.6rem;
+    gap: 44px;
+  }
+  &__btn {
+    border: 0.75px solid $darkgray-color;
+    background: none;
+    margin-top: 65px;
+    width: 310px;
+    height: 120px;
+    line-height: 45px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $darkgray-color;
+  }
+}
