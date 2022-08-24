@@ -10,21 +10,21 @@ const HomeHeader = () => {
         <div className="header__img"></div>
         <div className="header__container">
           <div className="header__top">
+            <Link to="/logowanie" className="header__signin">
+              Zaloguj
+            </Link>
             <Link
               to="/rejestracja"
               className="header__signin header__signin-active"
             >
               Załóż konto
             </Link>
-            <Link to="/logowanie" className="header__signin">
-              Zaloguj
-            </Link>
           </div>
           <nav className="nav">
             <ul className="nav__list">
               <li className="nav__element">
                 <Scroll
-                  to=""
+                  to="statistics"
                   spy={true}
                   smooth={true}
                   offset={50}
