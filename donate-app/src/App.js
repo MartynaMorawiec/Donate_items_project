@@ -1,10 +1,10 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Form from "./components/Form/Form";
-import Home from "./components/Home/Home";
-import LogIn from "./components/LogIn/LogIn";
-import LogOut from "./components/LogOut/LogOut";
-import Register from "./components/Register/Register";
+import Form from "./components/Form";
+import Home from "./components/Home";
+import LogIn from "./components/LogIn";
+import LogOut from "./components/LogOut";
+import Register from "./components/Register";
 
 function App() {
   return (
