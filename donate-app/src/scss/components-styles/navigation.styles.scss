@@ -1,0 +1,37 @@
+.navigation {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 37px;
+    margin-right: 142px;
+  }
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  &__signin {
+    flex-direction: row;
+    margin-left: 30px;
+    padding: 9px 10px;
+    color: $lightgray-color;
+    &:focus {
+      border: 0.75px solid $focus-color;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 55px;
+    margin-top: 26px;
+  }
+  &__element {
+    font-size: 1.8rem;
+    color: $darkgray-color;
+  }
+}

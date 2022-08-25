@@ -1,8 +1,28 @@
 .statistics {
-  display: flex;
   height: 384px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-image: url("../../assets/3\ Columns\ Background.png");
-  // &__boxes {
-
-  // }
+  &__box {
+    max-width: 334px;
+    text-align: center;
+    color: $darkgray-color;
+  }
+  &__number {
+    font-size: 9rem;
+    font-weight: 300;
+    color: $brown-color;
+    margin-bottom: 10px;
+  }
+  &__title {
+    font-size: 18px;
+    letter-spacing: -0.36px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  &__text {
+    font: 300 16px/28px $font-alt;
+    letter-spacing: -0.32px;
+  }
 }
