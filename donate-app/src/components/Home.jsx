@@ -3,6 +3,7 @@ import React from "react";
 import HomeHeader from "./HomeHeader";
 import ThreeColumns from "./ThreeColumns";
 import Navigation from "./Navigation";
+import Steps from "./Steps";
 
 const Home = () => {
   return (
@@ -10,8 +11,7 @@ const Home = () => {
       <Navigation />
       <HomeHeader />
       <ThreeColumns />
-      {/* <Link to="/oddaj-rzeczy">Form</Link>
-      <Link to="/wylogowano">Log out</Link> */}
+      <Steps />
     </>
   );
 };

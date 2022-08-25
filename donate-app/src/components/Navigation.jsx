@@ -21,7 +21,7 @@ const Navigation = () => {
           <ul className="nav__list">
             <li className="nav__element">
               <Scroll
-                to="statistics"
+                to="/"
                 spy={true}
                 smooth={true}
                 offset={50}
@@ -31,7 +31,13 @@ const Navigation = () => {
               </Scroll>
             </li>
             <li className="nav__element">
-              <Scroll to="" spy={true} smooth={true} offset={50} duration={500}>
+              <Scroll
+                to="steps"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
                 O co chodzi?
               </Scroll>
             </li>
