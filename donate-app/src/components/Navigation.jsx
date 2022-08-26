@@ -21,10 +21,10 @@ const Navigation = () => {
           <ul className="nav__list">
             <li className="nav__element">
               <Scroll
-                to="/"
+                to="start"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={-120}
                 duration={500}
               >
                 Start

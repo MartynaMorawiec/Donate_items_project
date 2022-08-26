@@ -5,7 +5,7 @@ import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 const HomeHeader = () => {
   return (
     <>
-      <div className="header">
+      <div className="header" id="start">
         <div className="header__img"></div>
         <div className="cta">
           <h2>
