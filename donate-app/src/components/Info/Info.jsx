@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactComponent as Decoration } from "../../assets/Decoration.svg";
-import Fundations from "./Fundations";
+import Foundations from "./Foundations";
 
 const Info = () => {
   return (
@@ -19,7 +19,7 @@ const Info = () => {
             <br /> zbiórkom
           </li>
         </nav>
-        <Fundations />
+        <Foundations />
       </section>
     </>
   );
