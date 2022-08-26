@@ -35,14 +35,20 @@ const Navigation = () => {
                 to="steps"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={-120}
                 duration={500}
               >
                 O co chodzi?
               </Scroll>
             </li>
             <li className="nav__element">
-              <Scroll to="" spy={true} smooth={true} offset={50} duration={500}>
+              <Scroll
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
                 O nas
               </Scroll>
             </li>

@@ -1,0 +1,46 @@
+.about {
+  display: flex;
+  height: calc(100vh - 122px);
+
+  &__box {
+    background-color: $background-color;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__content {
+    max-width: 657px;
+  }
+  &__title {
+    font-size: 38px;
+    letter-spacing: -0.76px;
+    color: $darkgray-color;
+    margin-bottom: 26px;
+  }
+  &__text {
+    font-size: 30px;
+    letter-spacing: -0.6px;
+    line-height: 55px;
+    margin-top: 55px;
+  }
+  &__signature {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 41px;
+  }
+  &__signature__img {
+    background-image: url("../../assets/Signature.svg");
+    width: 209px;
+    height: 149px;
+  }
+
+  &__image {
+    background-image: url("../../assets/People.jpg");
+    background-size: cover;
+    width: 50%;
+    position: relative;
+  }
+}
