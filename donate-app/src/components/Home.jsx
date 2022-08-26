@@ -5,6 +5,7 @@ import ThreeColumns from "./ThreeColumns";
 import Navigation from "./Navigation";
 import Steps from "./Steps";
 import About from "./About";
+import Info from "./Info/Info";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <ThreeColumns />
       <Steps />
       <About />
+      <Info />
     </>
   );
 };
