@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ReactComponent as Decoration } from "../../assets/Decoration.svg";
-import Foundations from "./Foundations";
+import { ReactComponent as Decoration } from "../assets/Decoration.svg";
+import Foundations from "./InfoTab";
 import {
   foundationsdesc,
   organisationsdesc,
@@ -8,7 +8,7 @@ import {
   foundations,
   organisations,
   local,
-} from "../../constants/constants";
+} from "../constants/constants";
 
 const Info = () => {
   const [activeTab, setActiveTab] = useState(1);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const Foundations = ({ foundations, description }) => {
+const InfoTab = ({ foundations, description }) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -52,4 +52,4 @@ const Foundations = ({ foundations, description }) => {
   );
 };
 
-export default Foundations;
+export default InfoTab;
