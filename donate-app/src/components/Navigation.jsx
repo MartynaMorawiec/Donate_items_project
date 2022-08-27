@@ -46,19 +46,31 @@ const Navigation = () => {
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={-150}
                 duration={500}
               >
                 O nas
               </Scroll>
             </li>
             <li className="nav__element">
-              <Scroll to="" spy={true} smooth={true} offset={50} duration={500}>
+              <Scroll
+                to="info"
+                spy={true}
+                smooth={true}
+                offset={-120}
+                duration={500}
+              >
                 Fundacja i organizacje
               </Scroll>
             </li>
             <li className="nav__element">
-              <Scroll to="" spy={true} smooth={true} offset={50} duration={500}>
+              <Scroll
+                to=""
+                spy={true}
+                smooth={true}
+                offset={-120}
+                duration={500}
+              >
                 Kontakt
               </Scroll>
             </li>

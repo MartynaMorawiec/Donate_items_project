@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ReactPaginate from "react-paginate";
 
-const Foundations = () => {
+const Foundations = ({ foundations, description }) => {
+  const [currentItems, setCurrentItems] = useState([]);
+  const [pageCount, setPageCount] = useState(0);
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 3;
+
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(foundations.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(foundations.length / itemsPerPage));
+  }, [itemOffset, itemsPerPage, foundations]);
+
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % foundations.length;
+
+    setItemOffset(newOffset);
+  };
+
   return (
     <div>
       <div className="help">
-        <p className="help__description">
-          W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-          współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i
-          czego potrzebują.
-        </p>
+        <p className="help__description">{description}</p>
       </div>
-      {foundations.map((element) => {
+
+      {currentItems.map((element) => {
         return (
           <div className="help__content" key={element.title}>
             <div>
@@ -21,56 +36,20 @@ const Foundations = () => {
           </div>
         );
       })}
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel=""
+        onPageChange={handlePageClick}
+        pageRangeDisplayed={3}
+        pageCount={pageCount}
+        previousLabel=""
+        renderOnZeroPageCount={null}
+        containerClassName="page"
+        pageLinkClassName="page__num"
+        activeLinkClassName="page__active"
+      />
     </div>
   );
 };
-
-const foundations = [
-  {
-    title: 'Fundacja "Dbam o zdrowie"',
-    text: "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
-    details: "ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Dla dzieci”",
-    text: "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
-    details: " ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Bez domu”",
-    text: " Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
-    details: "ubrania, jedzenie, ciepłe koce",
-  },
-  {
-    title: 'Fundacja "Dla zdrowia"',
-    text: "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
-    details: "ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Pomoc dzieciom”",
-    text: "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
-    details: " ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Schronienie”",
-    text: " Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
-    details: "ubrania, jedzenie, ciepłe koce",
-  },
-  {
-    title: 'Fundacja "Health"',
-    text: "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
-    details: "ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Children”",
-    text: "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
-    details: " ubrania, jedzenie, sprzęt AGD, meble, zabawki",
-  },
-  {
-    title: "Fundacja “Shelter”",
-    text: " Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
-    details: "ubrania, jedzenie, ciepłe koce",
-  },
-];
 
 export default Foundations;
