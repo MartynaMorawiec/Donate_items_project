@@ -27,7 +27,7 @@ const InfoTab = ({ foundations, description }) => {
 
       {currentItems.map((element) => {
         return (
-          <div className="help__content" key={element.title}>
+          <div className="help__content" key={element.id}>
             <div>
               <h4 className="help__title">{element.title}</h4>
               <p className="help__text">{element.text}</p>
