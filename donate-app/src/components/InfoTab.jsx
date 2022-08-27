@@ -36,18 +36,22 @@ const InfoTab = ({ foundations, description }) => {
           </div>
         );
       })}
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel=""
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
-        pageCount={pageCount}
-        previousLabel=""
-        renderOnZeroPageCount={null}
-        containerClassName="page"
-        pageLinkClassName="page__num"
-        activeLinkClassName="page__active"
-      />
+      {pageCount === 1 ? (
+        ""
+      ) : (
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel=""
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          pageCount={pageCount}
+          previousLabel=""
+          renderOnZeroPageCount={null}
+          containerClassName="page"
+          pageLinkClassName="page__num"
+          activeLinkClassName="page__active"
+        />
+      )}
     </div>
   );
 };

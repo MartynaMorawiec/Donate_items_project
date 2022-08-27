@@ -17,7 +17,7 @@
     font-family: $font-alt;
     font-weight: 300;
     border-bottom: 0.75px solid $darkgray-color;
-    &:last-child {
+    &:nth-child(4n) {
       border-bottom: none;
     }
   }
