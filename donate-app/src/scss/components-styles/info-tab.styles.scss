@@ -9,14 +9,15 @@
     margin: 50px 0 35px 0;
   }
   &__content {
-    width: 1344px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 100px;
     color: $darkgray-color;
     font-family: $font-alt;
     font-weight: 300;
     border-bottom: 0.75px solid $darkgray-color;
+    margin: 0 10px;
     &:nth-child(4n) {
       border-bottom: none;
     }
