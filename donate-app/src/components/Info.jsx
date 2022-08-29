@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
-import Foundations from "./InfoTab";
+import InfoTab from "./InfoTab";
 import {
   foundationsdesc,
   organisationsdesc,
@@ -26,8 +26,11 @@ const Info = () => {
   return (
     <>
       <section className="info" id="info">
-        <h2 className="info__title">Komu pomagamy?</h2>
-        <Decoration />
+        <div className="info__header">
+          <h2 className="info__title">Komu pomagamy?</h2>
+          <Decoration />
+        </div>
+
         <div className="info__buttons">
           <button
             className={
@@ -57,19 +60,16 @@ const Info = () => {
           </button>
         </div>
         {activeTab === 1 && (
-          <Foundations
-            foundations={foundations}
-            description={foundationsdesc}
-          />
+          <InfoTab foundations={foundations} description={foundationsdesc} />
         )}
         {activeTab === 2 && (
-          <Foundations
+          <InfoTab
             foundations={organisations}
             description={organisationsdesc}
           />
         )}
         {activeTab === 3 && (
-          <Foundations foundations={local} description={localdesc} />
+          <InfoTab foundations={local} description={localdesc} />
         )}
       </section>
     </>

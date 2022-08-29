@@ -20,8 +20,8 @@ const InfoTab = ({ foundations, description }) => {
   };
 
   return (
-    <div>
-      <div className="help">
+    <div className="help">
+      <div className="help__container">
         <p className="help__description">{description}</p>
       </div>
 

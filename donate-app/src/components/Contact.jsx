@@ -47,7 +47,7 @@ const Contact = () => {
                 <textarea
                   className="contact__input contact__input-msg"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  rows="6"
+                  rows="5"
                   required
                 ></textarea>
               </div>
