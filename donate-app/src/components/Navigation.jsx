@@ -65,7 +65,7 @@ const Navigation = () => {
             </li>
             <li className="nav__element">
               <Scroll
-                to=""
+                to="contact"
                 spy={true}
                 smooth={true}
                 offset={-120}

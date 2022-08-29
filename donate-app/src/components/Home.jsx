@@ -1,11 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 import HomeHeader from "./HomeHeader";
 import ThreeColumns from "./ThreeColumns";
 import Navigation from "./Navigation";
 import Steps from "./Steps";
 import About from "./About";
 import Info from "./Info";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -16,6 +16,7 @@ const Home = () => {
       <Steps />
       <About />
       <Info />
+      <Contact />
     </>
   );
 };

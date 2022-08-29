@@ -1,0 +1,104 @@
+.contact {
+  height: calc(100vh - 120px);
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+  }
+
+  &__image {
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    background-size: 150%;
+    background-repeat: no-repeat;
+    width: 60%;
+    height: 100vh;
+    opacity: 0.2;
+  }
+  &__box {
+    width: 40%;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-size: 38px;
+    letter-spacing: -0.76px;
+    margin: 150px 0 30px 0;
+    color: $darkgray-color;
+  }
+  &__form {
+    margin: 70px 142px 0 10px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    font-size: 16px;
+    color: $darkgray-color;
+    font-weight: 600;
+    width: 256px;
+  }
+  &__input {
+    border: none;
+    border-bottom: 0.9px solid $darkgray-color;
+    margin: 16px 0 44px 0;
+    font-size: 18px;
+    color: $darkgray-color;
+    &::placeholder {
+      opacity: 0.2;
+    }
+    &-msg {
+      resize: none;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__btn {
+    background: none;
+    border: 0.75px solid $darkgray-color;
+    padding: 13px 52px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 22px;
+  display: flex;
+  width: 100%;
+  &__copy {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+  }
+  &__media {
+    display: flex;
+    &-fcb {
+      background-image: url("../../assets/Facebook.svg");
+      width: 30px;
+      height: 30px;
+    }
+    &-inst {
+      background-image: url("../../assets/Instagram.svg");
+      width: 30px;
+      height: 30px;
+      margin: 0 142px 0 20px;
+    }
+  }
+}
