@@ -1,5 +1,5 @@
 .contact {
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
   position: relative;
   overflow: hidden;
 
@@ -13,7 +13,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 60%;
-    height: 100vh;
+    min-height: calc(100vh - 120px);
     opacity: 0.2;
   }
   &__box {

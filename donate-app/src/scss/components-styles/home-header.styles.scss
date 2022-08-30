@@ -1,15 +1,11 @@
 .header {
-  height: calc(100vh - 114.5px);
+  min-height: calc(100vh - 120px);
   display: flex;
   margin-right: 142px;
 
   &__img {
-    position: relative;
-    z-index: 12;
-    top: -114.5px;
-    left: 0;
-    width: 70vw;
-    height: 100vh;
+    width: 70%;
+    min-height: calc(100vh - 120px);
     background-image: url("../../assets/Home-Hero-Image.jpg");
     background-size: cover;
     background-position: right;
@@ -19,7 +15,7 @@
 
 .cta {
   width: 60%;
-  height: 100vh;
+  // min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

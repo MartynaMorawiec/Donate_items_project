@@ -5,8 +5,6 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  // const [error, setError] = useState("");
-  // console.log(setError);
   const isValid = () => {};
   console.log(isValid);
 

@@ -1,10 +1,12 @@
 .statistics {
   height: 384px;
-  width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-image: url("../../assets/3\ Columns\ Background.png");
+  background-position: center;
+  background-size: cover;
+
   &__box {
     max-width: 384px;
     text-align: center;
