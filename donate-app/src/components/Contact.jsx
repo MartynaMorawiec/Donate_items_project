@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  // const [error, setError] = useState("");
+  // console.log(setError);
+  const isValid = () => {};
+  console.log(isValid);
+
   return (
     <>
       <section className="contact" id="contact">
@@ -11,6 +19,10 @@ const Contact = () => {
             <div className="contact__header">
               <h3 className="contact__title">Skontaktuj się z nami</h3>
               <Decoration />
+              <p className="contact__valid">
+                Wiadomość została wysłana!
+                <br /> Wkrótce się skontaktujemy.
+              </p>
             </div>
 
             <form className="contact__form">
@@ -24,8 +36,11 @@ const Contact = () => {
                     id="name"
                     className="contact__input"
                     placeholder="Krzysztof"
+                    value={name}
+                    onChange={(e) => setName(e.currentTarget.value)}
                     required
                   />
+                  <p className="contact-err">Podane imię jest nieprawidłowe</p>
                 </div>
                 <div className="contact__info">
                   <label htmlFor="email" className="contact__label">
@@ -34,10 +49,13 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="contact__input"
+                    className="contact__input contact__input-err"
                     placeholder="abc@xyz.pl"
+                    value={email}
+                    onChange={(e) => setEmail(e.currentTarget.value)}
                     required
                   />
+                  <p className="contact-err">Podany email jest nieprawidłowy</p>
                 </div>
               </div>
               <div className="contact__info">
@@ -45,9 +63,14 @@ const Contact = () => {
                 <textarea
                   className="contact__input contact__input-msg"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-                  rows="5"
+                  value={message}
+                  onChange={(e) => setMessage(e.currentTarget.value)}
+                  rows="4"
                   required
                 ></textarea>
+                <p className="contact-err">
+                  Wiadomość musi mieć co najmniej 120 znaków!
+                </p>
               </div>
 
               <div className="contact__button">

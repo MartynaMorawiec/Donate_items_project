@@ -6,6 +6,7 @@ const Register = () => {
   return (
     <section className="login">
       <Navigation />
+
       <div className="login__container">
         <h2 className="login__title">Zaloguj się</h2>
         <Decoration />

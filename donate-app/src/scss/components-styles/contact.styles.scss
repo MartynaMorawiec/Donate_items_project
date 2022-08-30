@@ -31,6 +31,14 @@
     margin: 0 0 30px 0;
     color: $darkgray-color;
   }
+  &__valid {
+    font-weight: 700;
+    color: rgb(19, 163, 19);
+    font-size: 16px;
+    line-height: 25px;
+    margin-top: 20px;
+    text-align: center;
+  }
   &__form {
     margin: 70px 142px 60px 10px;
   }
@@ -43,6 +51,7 @@
   &__info {
     display: flex;
     flex-direction: column;
+    margin-bottom: 44px;
   }
   &__label {
     font-size: 16px;
@@ -53,16 +62,23 @@
   &__input {
     border: none;
     border-bottom: 0.9px solid $darkgray-color;
-    margin: 16px 0 44px 0;
+    margin: 16px 0 10px 0;
     font-size: 18px;
     color: $darkgray-color;
     font-family: $font-base;
+    &-err {
+      border-bottom: 1.2px solid red;
+    }
     &::placeholder {
       opacity: 0.2;
     }
     &-msg {
       resize: none;
     }
+  }
+  &-err {
+    color: red;
+    font-weight: 700;
   }
   &__button {
     display: flex;
