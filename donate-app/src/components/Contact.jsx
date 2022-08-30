@@ -41,9 +41,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="contact__info">
-                <div htmlFor="message" className="contact__label">
-                  Wpisz swoją wiadomość
-                </div>
+                <div className="contact__label">Wpisz swoją wiadomość</div>
                 <textarea
                   className="contact__input contact__input-msg"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
