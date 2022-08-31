@@ -5,8 +5,18 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const isValid = () => {};
-  console.log(isValid);
+  const [error, setError] = useState(false);
+
+  const showErr = () => {
+    if (!name || name.contains(" ")) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+
+    return error;
+  };
+  console.log(error);
 
   return (
     <>
@@ -38,7 +48,11 @@ const Contact = () => {
                     onChange={(e) => setName(e.currentTarget.value)}
                     required
                   />
-                  <p className="contact-err">Podane imię jest nieprawidłowe</p>
+                  {showErr && (
+                    <p className="contact-err">
+                      Podane imię jest nieprawidłowe
+                    </p>
+                  )}
                 </div>
                 <div className="contact__info">
                   <label htmlFor="email" className="contact__label">
