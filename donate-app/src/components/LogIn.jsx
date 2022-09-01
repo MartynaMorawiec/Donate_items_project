@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "./Navigation.jsx";
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 
 const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorPass, setErrorPass] = useState(false);
+
+  const checkEmail = (e) => {
+    setEmail(e.currentTarget.value);
+    const signs = /\S+@\S+\.\S+/;
+    if (!signs.test(email)) {
+      setErrorEmail(true);
+    } else {
+      setErrorEmail(false);
+    }
+  };
+
+  const checkPassword = (e) => {
+    setPassword(e.currentTarget.value);
+    if (password.length < 5) {
+      setErrorPass(true);
+    } else {
+      setErrorPass(false);
+    }
+  };
   return (
     <section className="login">
       <Navigation />
@@ -16,9 +39,16 @@ const LogIn = () => {
             </label>
             <input
               type="email"
-              className="login__input"
+              className={
+                errorEmail ? "login__input login__input-err" : "login__input "
+              }
               id="login-email"
+              value={email}
+              onChange={checkEmail}
             ></input>
+            {errorEmail && (
+              <p className="login-err">Podany email jest nieprawidłowy</p>
+            )}
           </div>
           <div className="login__box">
             <label htmlFor="login-pass" className="login__label">
@@ -26,9 +56,16 @@ const LogIn = () => {
             </label>
             <input
               type="password"
-              className="login__input"
+              className={
+                errorPass ? "login__input login__input-err" : "login__input"
+              }
               id="login-pass"
+              value={password}
+              onChange={checkPassword}
             ></input>
+            {errorPass && (
+              <p className="login-err">Podane hasło jest nieprawidłowe</p>
+            )}
           </div>
         </div>
         <div className="login__buttons">
