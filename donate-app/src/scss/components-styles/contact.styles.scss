@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 520px;
   }
   &__title {
     font-size: 38px;
@@ -84,6 +85,7 @@
   &__button {
     display: flex;
     justify-content: flex-end;
+    width: 520px;
   }
   &__btn {
     background: none;

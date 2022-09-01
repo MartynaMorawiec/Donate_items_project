@@ -1,22 +1,68 @@
 import React, { useState } from "react";
 import { ReactComponent as Decoration } from "../assets/Decoration.svg";
 
+const fullUrl = `https://fer-api.coderslab.pl/v1/portfolio/contact`;
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState(false);
+  const [errorName, setErrorName] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(false);
+  console.log(setSuccessMessage);
 
-  const showErr = () => {
-    if (!name || name.contains(" ")) {
-      setError(true);
+  const checkName = (e) => {
+    setName(e.currentTarget.value);
+    if (name.includes(" ")) {
+      setErrorName(true);
     } else {
-      setError(false);
+      setErrorName(false);
     }
-
-    return error;
   };
-  console.log(error);
+
+  const checkEmail = (e) => {
+    setEmail(e.currentTarget.value);
+    const signs = /\S+@\S+\.\S+/;
+    if (!signs.test(email)) {
+      setErrorEmail(true);
+    } else {
+      setErrorEmail(false);
+    }
+  };
+
+  const checkMessage = (e) => {
+    setMessage(e.currentTarget.value);
+    if (message.length < 120) {
+      setErrorMessage(true);
+    } else {
+      setErrorMessage(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!errorName && !errorEmail && !errorMessage) {
+      setName("");
+      setEmail("");
+      setMessage("");
+      fetch(`${fullUrl}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      })
+        .then(() => fetch(fullUrl))
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+  };
 
   return (
     <>
@@ -27,13 +73,15 @@ const Contact = () => {
             <div className="contact__header">
               <h3 className="contact__title">Skontaktuj się z nami</h3>
               <Decoration />
-              <p className="contact__valid">
-                Wiadomość została wysłana!
-                <br /> Wkrótce się skontaktujemy.
-              </p>
+              {successMessage && (
+                <p className="contact__valid">
+                  Wiadomość została wysłana!
+                  <br /> Wkrótce się skontaktujemy.
+                </p>
+              )}
             </div>
 
-            <form className="contact__form">
+            <form className="contact__form" onSubmit={handleSubmit}>
               <div className="contact__content">
                 <div className="contact__info">
                   <label htmlFor="name" className="contact__label">
@@ -42,13 +90,17 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
-                    className="contact__input"
+                    className={
+                      errorName
+                        ? "contact__input contact__input-err"
+                        : "contact__input"
+                    }
                     placeholder="Krzysztof"
                     value={name}
-                    onChange={(e) => setName(e.currentTarget.value)}
+                    onChange={checkName}
                     required
                   />
-                  {showErr && (
+                  {errorName && (
                     <p className="contact-err">
                       Podane imię jest nieprawidłowe
                     </p>
@@ -61,28 +113,42 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    className="contact__input contact__input-err"
+                    className={
+                      errorEmail
+                        ? "contact__input contact__input-err"
+                        : "contact__input"
+                    }
                     placeholder="abc@xyz.pl"
                     value={email}
-                    onChange={(e) => setEmail(e.currentTarget.value)}
+                    onChange={checkEmail}
                     required
                   />
-                  <p className="contact-err">Podany email jest nieprawidłowy</p>
+                  {errorEmail && (
+                    <p className="contact-err">
+                      Podany email jest nieprawidłowy
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="contact__info">
                 <div className="contact__label">Wpisz swoją wiadomość</div>
                 <textarea
-                  className="contact__input contact__input-msg"
+                  className={
+                    errorMessage
+                      ? "contact__input contact__input-msg contact__input-err"
+                      : "contact__input contact__input-msg"
+                  }
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                   value={message}
-                  onChange={(e) => setMessage(e.currentTarget.value)}
+                  onChange={checkMessage}
                   rows="4"
                   required
                 ></textarea>
-                <p className="contact-err">
-                  Wiadomość musi mieć co najmniej 120 znaków!
-                </p>
+                {errorMessage && (
+                  <p className="contact-err">
+                    Wiadomość musi mieć co najmniej 120 znaków!
+                  </p>
+                )}
               </div>
 
               <div className="contact__button">
