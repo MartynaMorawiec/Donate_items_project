@@ -1,6 +1,6 @@
 .login {
   &__container {
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
     width: 100%;
     display: flex;
     flex-direction: column;
