@@ -20,7 +20,7 @@ const LogIn = () => {
 
   const checkPassword = (e) => {
     setPassword(e.currentTarget.value);
-    if (password.length < 5) {
+    if (e.currentTarget.value.length < 6) {
       setErrorPass(true);
     } else {
       setErrorPass(false);

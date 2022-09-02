@@ -22,7 +22,8 @@ const Register = () => {
 
   const checkPassword = (e) => {
     setPassword(e.currentTarget.value);
-    if (password.length < 5) {
+    console.log(`first:${e.currentTarget.value}`);
+    if (e.currentTarget.value.length < 6) {
       setErrorPass(true);
     } else {
       setErrorPass(false);
@@ -31,7 +32,8 @@ const Register = () => {
 
   const checkPasswordRep = (e) => {
     setPasswordRep(e.currentTarget.value);
-    if (password.length < 5 && password === passwordRep) {
+    console.log(`second:${e.currentTarget.value}`);
+    if (password !== e.currentTarget.value) {
       setErrorPassRep(true);
     } else {
       setErrorPassRep(false);
@@ -52,7 +54,9 @@ const Register = () => {
             </label>
             <input
               type="email"
-              className="login__input"
+              className={
+                errorEmail ? "login__input login__input-err" : "login__input"
+              }
               id="login-email"
               value={email}
               onChange={checkEmail}
@@ -67,7 +71,9 @@ const Register = () => {
             </label>
             <input
               type="password"
-              className="login__input"
+              className={
+                errorPass ? "login__input login__input-err" : "login__input"
+              }
               id="login-pass"
               value={password}
               onChange={checkPassword}
@@ -82,7 +88,9 @@ const Register = () => {
             </label>
             <input
               type="password"
-              className="login__input"
+              className={
+                errorPassRep ? "login__input login__input-err" : "login__input"
+              }
               id="login-pass-2"
               value={passwordRep}
               onChange={checkPasswordRep}

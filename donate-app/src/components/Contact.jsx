@@ -44,10 +44,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorName && !errorEmail && !errorMessage) {
-      setName("");
-      setEmail("");
-      setMessage("");
-      fetch(`${fullUrl}`, {
+      fetch(fullUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +55,6 @@ const Contact = () => {
           message,
         }),
       })
-        .then(() => fetch(fullUrl))
         .then((response) => response.json())
         .then((data) => console.log(data));
     }
