@@ -34,7 +34,7 @@ const Contact = () => {
 
   const checkMessage = (e) => {
     setMessage(e.currentTarget.value);
-    if (message.length < 120) {
+    if (e.currentTarget.value.length < 120) {
       setErrorMessage(true);
     } else {
       setErrorMessage(false);
@@ -55,8 +55,18 @@ const Contact = () => {
           message,
         }),
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (response.status === 200) {
+            setSuccessMessage(true);
+            return;
+          }
+          return setSuccessMessage(false);
+        })
         .then((data) => console.log(data));
+
+      setName("");
+      setEmail("");
+      setMessage("");
     }
   };
 
