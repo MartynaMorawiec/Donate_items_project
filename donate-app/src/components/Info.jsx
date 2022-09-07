@@ -8,7 +8,7 @@ import {
   foundations,
   organisations,
   local,
-} from "../constants/constants";
+} from "../data/data";
 
 const Info = () => {
   const [activeTab, setActiveTab] = useState(1);
