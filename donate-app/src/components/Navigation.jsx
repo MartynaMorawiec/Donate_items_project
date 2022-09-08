@@ -12,7 +12,7 @@ const Navigation = () => {
           </Link>
           <Link
             to="/rejestracja"
-            className="navigation__signin navigation__signin-active"
+            className="navigation__signin navigation__signin--active"
           >
             Załóż konto
           </Link>

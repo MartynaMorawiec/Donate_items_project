@@ -31,7 +31,7 @@
       margin-bottom: 30px;
     }
   }
-  &-err {
+  &__msg--err {
     color: red;
     font-weight: 700;
   }
@@ -46,10 +46,10 @@
     background-color: $background-color;
     width: 250px;
     font-size: 16px;
-    &-err {
-      border-bottom: 1.2px solid red;
-      margin-bottom: 5px;
-    }
+  }
+  &__input--err {
+    border-bottom: 1.2px solid red;
+    margin-bottom: 5px;
   }
   &__buttons {
     width: 50%;
@@ -63,8 +63,8 @@
     font-weight: 300;
     margin-top: 53px;
     padding: 13px 16px;
-    &-active {
-      border: 0.75px solid $darkgray-color;
-    }
+  }
+  &__btn--active {
+    border: 0.75px solid $darkgray-color;
   }
 }

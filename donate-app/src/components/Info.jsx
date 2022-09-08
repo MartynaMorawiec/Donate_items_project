@@ -34,7 +34,7 @@ const Info = () => {
         <div className="info__buttons">
           <button
             className={
-              activeTab === 1 ? "info__btn info__btn-active" : "info__btn"
+              activeTab === 1 ? "info__btn info__btn--active" : "info__btn"
             }
             onClick={handleTab1}
           >
@@ -42,7 +42,7 @@ const Info = () => {
           </button>
           <button
             className={
-              activeTab === 2 ? "info__btn info__btn-active" : "info__btn"
+              activeTab === 2 ? "info__btn info__btn--active" : "info__btn"
             }
             onClick={handleTab2}
           >
@@ -51,7 +51,7 @@ const Info = () => {
           </button>
           <button
             className={
-              activeTab === 3 ? "info__btn info__btn-active" : "info__btn"
+              activeTab === 3 ? "info__btn info__btn--active" : "info__btn"
             }
             onClick={handleTab3}
           >

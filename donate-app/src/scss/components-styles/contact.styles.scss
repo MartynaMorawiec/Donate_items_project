@@ -67,18 +67,18 @@
     font-size: 18px;
     color: $darkgray-color;
     font-family: $font-base;
-    &-err {
-      border-bottom: 1.2px solid red;
-    }
-    &::placeholder {
-      opacity: 0.2;
-    }
-    &-msg {
-      resize: none;
-      width: 522px;
-    }
   }
-  &-err {
+  &__input--err {
+    border-bottom: 1.2px solid red;
+  }
+  &::placeholder {
+    opacity: 0.2;
+  }
+  &-msg {
+    resize: none;
+    width: 522px;
+  }
+  &__msg--err {
     color: red;
     font-weight: 700;
   }

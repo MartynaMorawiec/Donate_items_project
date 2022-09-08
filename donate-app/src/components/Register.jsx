@@ -55,18 +55,18 @@ const Register = () => {
             <input
               type="email"
               className={
-                errorEmail ? "login__input login__input-err" : "login__input"
+                errorEmail ? "login__input login__input--err" : "login__input"
               }
               id="login-email"
               value={email}
               onChange={checkEmail}
             ></input>
             {errorEmail && (
-              <p className="login-err">Podany email jest nieprawidłowy</p>
+              <p className="login__msg--err">Podany email jest nieprawidłowy</p>
             )}
           </div>
           <div className="login__box">
-            <label htmlFor="login-pass" className="login__label">
+            <label htmlFor="login__pass" className="login__label">
               Hasło
             </label>
             <input
@@ -74,29 +74,29 @@ const Register = () => {
               className={
                 errorPass ? "login__input login__input-err" : "login__input"
               }
-              id="login-pass"
+              id="login__pass"
               value={password}
               onChange={checkPassword}
             ></input>
             {errorPass && (
-              <p className="login-err">Podane hasło jest nieprawidłowe</p>
+              <p className="login__msg--err">Podane hasło jest nieprawidłowe</p>
             )}
           </div>
           <div className="login__box">
-            <label htmlFor="login-pass-2" className="login__label">
+            <label htmlFor="login__pass2" className="login__label">
               Powtrórz hasło
             </label>
             <input
               type="password"
               className={
-                errorPassRep ? "login__input login__input-err" : "login__input"
+                errorPassRep ? "login__input login__input--err" : "login__input"
               }
-              id="login-pass-2"
+              id="login__pass2"
               value={passwordRep}
               onChange={checkPasswordRep}
             ></input>
             {errorPassRep && (
-              <p className="login-err">Podane hasło jest nieprawidłowe</p>
+              <p className="login__msg--err">Podane hasło jest nieprawidłowe</p>
             )}
           </div>
         </div>

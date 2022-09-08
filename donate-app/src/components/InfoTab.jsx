@@ -49,7 +49,7 @@ const InfoTab = ({ foundations, description }) => {
           renderOnZeroPageCount={null}
           containerClassName="page"
           pageLinkClassName="page__num"
-          activeLinkClassName="page__active"
+          activeLinkClassName="page__link--active"
         />
       )}
     </div>

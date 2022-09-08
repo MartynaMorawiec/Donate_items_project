@@ -34,37 +34,37 @@ const LogIn = () => {
         <Decoration />
         <div className="login__boxes">
           <div className="login__box">
-            <label htmlFor="login-email" className="login__label">
+            <label htmlFor="login__email" className="login__label">
               Email
             </label>
             <input
               type="email"
               className={
-                errorEmail ? "login__input login__input-err" : "login__input "
+                errorEmail ? "login__input login__input--err" : "login__input "
               }
-              id="login-email"
+              id="login__email"
               value={email}
               onChange={checkEmail}
             ></input>
             {errorEmail && (
-              <p className="login-err">Podany email jest nieprawidłowy</p>
+              <p className="login__msg--err">Podany email jest nieprawidłowy</p>
             )}
           </div>
           <div className="login__box">
-            <label htmlFor="login-pass" className="login__label">
+            <label htmlFor="login__pass" className="login__label">
               Hasło
             </label>
             <input
               type="password"
               className={
-                errorPass ? "login__input login__input-err" : "login__input"
+                errorPass ? "login__input login__input--err" : "login__input"
               }
-              id="login-pass"
+              id="login__pass"
               value={password}
               onChange={checkPassword}
             ></input>
             {errorPass && (
-              <p className="login-err">Podane hasło jest nieprawidłowe</p>
+              <p className="login__msg--err">Podane hasło jest nieprawidłowe</p>
             )}
           </div>
         </div>

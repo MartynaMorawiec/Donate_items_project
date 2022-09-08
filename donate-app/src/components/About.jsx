@@ -15,7 +15,7 @@ const About = () => {
               lentil turnip greens parsnip.
             </p>
             <div className="about__signature">
-              <div className="about__signature__img"></div>
+              <div className="about__signature-img"></div>
             </div>
           </div>
         </div>
